@@ -1,0 +1,1 @@
+curl -s "https://01yessenov.yu.edu.kz/assets/superhero/all.json" | jq -r --arg id "$HERO_ID" '.[] | select(.id == ($id | tonumber)) | .connections.relatives | gsub("\n"; "\\n")'

@@ -1,0 +1,1 @@
+(ls -lt --time=atime | grep -v '^d' | grep -v '^total' | awk '{print $9}' | grep -v '^\.' | sort; ls -lt --time=atime | grep '^d' | grep -v ' \.$' | grep -v ' \.\.$' | awk '{print $9 "/"}' | sort) | tr '\n' ',' | sed 's/,$//'
